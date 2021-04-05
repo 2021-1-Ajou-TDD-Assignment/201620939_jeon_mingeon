@@ -64,6 +64,14 @@ public class BowlingGameTest {
 	}
 
 	@Test
+	public void testTwoStrike() {
+		rollStrike();
+		rollStrike();
+		rollMany(16,0);
+		assertEquals(30,g.score());
+	}
+
+	@Test
 	public void testPerfectGame() {
 		rollMany(12,10);
 		assertEquals(300,g.score());
