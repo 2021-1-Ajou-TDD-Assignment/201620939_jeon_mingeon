@@ -19,6 +19,11 @@ public class BowlingGameTest {
 			g.roll(pins);
 		}
 	}
+
+	private void rollSpare(int firstRoll) {
+		g.roll(firstRoll);
+		g.roll(10-firstRoll); // spare
+	}
 	
 	@Test
 	public void testGutterGame() {
@@ -39,11 +44,11 @@ public class BowlingGameTest {
 	
 	@Test
 	public void testOneSpare() {
-		g.roll(5);
-		g.roll(5); // spare
+		rollSpare(5);
 		g.roll(3);
 		rollMany(17,0);
 		assertEquals(16,g.score());
 	}
+
 
 }
