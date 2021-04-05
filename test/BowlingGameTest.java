@@ -36,7 +36,7 @@ public class BowlingGameTest {
 		assertEquals(20,g.score());
 	}
 
-	@Ignore("Redesigning Game")
+	
 	@Test
 	public void testOneSpare() {
 		g.roll(5);
