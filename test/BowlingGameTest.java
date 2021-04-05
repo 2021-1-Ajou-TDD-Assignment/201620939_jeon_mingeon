@@ -1,22 +1,30 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class BowlingGameTest {
-
+	
+	private Game g;
+	private int pins;
+	@Before
+	public void setUp() {
+		g = new Game();
+	}
+	
 	@Test
 	public void testGutterGame() {
-		Game g = new Game();
+		pins=0;
 		for (int i=0;i<20;i++) {
-			g.roll(0);
+			g.roll(pins);
 		}
 		assertEquals(0,g.score());
 	}
 	@Test
 	public void testAllOnes() {
-		Game g = new Game();
+		pins=1;
 		for (int i=0;i<20;i++) {
-			g.roll(1);
+			g.roll(pins);
 		}
 		assertEquals(20,g.score());
 	}
